@@ -113,7 +113,12 @@ nav .wrap{display:flex; align-items:center; justify-content:space-between; heigh
 .navcta:hover{background:var(--ink); color:var(--cream)}
 
 
-.navlinks{display:flex; align-items:center; gap:22px}
+.navlinks{display:flex; align-items:center; gap:14px}
+
+.navcta-ghost{border-color:var(--teal);color:var(--teal)}
+.navcta-ghost:hover{background:var(--teal);color:var(--cream)}
+@media(max-width:480px){.navcta-ghost{display:none}}
+
 .navlink{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--ink-soft); text-decoration:none; transition:.2s}
 .navlink:hover{color:var(--teal)}
 @media(max-width:560px){.navlink:first-child{display:none}}
@@ -278,6 +283,23 @@ section{padding:82px 0}
 .final p{margin:22px auto 34px; font-size:18px; color:var(--ink-soft); max-width:40ch}
 .final .herocta{justify-content:center}
 
+
+.mailcta{margin-top:30px;font-size:15px;color:var(--ink-soft);max-width:52ch;margin-left:auto;margin-right:auto;text-wrap:balance}
+.mailcta a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1.5px solid rgba(77,158,154,.35);transition:.2s}
+.mailcta a:hover{border-bottom-color:var(--teal)}
+
+
+/* ---------- email band ---------- */
+.mailband{border:1px solid var(--line);border-radius:16px;background:#fff;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;position:relative;overflow:hidden}
+.mailband::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--teal),var(--pink))}
+.mailband .mb-copy{max-width:52ch}
+.mailband .mb-k{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.mailband p{font-size:15.5px;color:var(--ink-soft);line-height:1.5;text-wrap:balance}
+.mailband .btn{white-space:nowrap}
+.offer .mailband{background:rgba(248,246,241,.05);border-color:rgba(248,246,241,.14)}
+.offer .mailband p{color:rgba(248,246,241,.75)}
+@media(max-width:700px){.mailband{padding:22px 22px}}
+
 /* ---------- FOOTER ---------- */
 footer{border-top:1px solid var(--line); padding:40px 0; background:#fff}
 footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px}
@@ -373,14 +395,15 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
 
 </style>
 </head>
-<body>
+<body id="top">
 
 <nav>
   <div class="wrap">
-    <div class="wordmark">hayward<b>.</b></div>
+    <a class="wordmark" href="#top" style="text-decoration:none;color:inherit">hayward<b>.</b></a>
     <div class="navlinks">
       <a class="navlink" href="#how">how it works</a>
       <a class="navlink" href="#pricing">pricing</a>
+      <a class="navcta navcta-ghost" href="mailto:hello@katiehaywardconsulting.com?subject=Challenges%20%2B%20ambitions">email</a>
       <a class="navcta" href="https://calendar.app.google/iax3eaqp5xNwpsHW8" target="_blank" rel="noopener">book a consultation</a>
     </div>
   </div>
@@ -391,7 +414,7 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
   <div class="wrap">
     <div class="eyebrow">a new kind of hire &#183; analyst &#183; builder &#183; doer</div>
     <h1>what your business <em>could be doing</em>. <span class="b">found, then built.</span></h1>
-    <p class="lede">Drop me into your company for a quarter. I assess every corner of the business, show you where the upside is, and then build it myself. Diagnosis and delivery, one person, one engagement.</p>
+    <p class="lede">One quarter, embedded. I assess the business, find the upside, and build it. One person, diagnosis through delivery.</p>
     <div class="herocta">
       <a class="btn btn-solid" href="https://calendar.app.google/iax3eaqp5xNwpsHW8" target="_blank" rel="noopener">book a consultation</a>
       <a class="btn btn-ghost" href="#how">how it works</a>
@@ -414,29 +437,36 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
     <div class="sec-head">
       <div class="eyebrow">the engagement</div>
       <h2>A quarter in your business, <em>doing the work</em>.</h2>
-      <p>Many operators assess. Others execute. This is both. A defined engagement with a real end date, and a business that runs better than when I walked in.</p>
+      <p>Assessment and execution, one engagement. Defined scope, real end date.</p>
     </div>
     <div class="phases">
       <div class="phase">
         <div class="k">weeks 1–3</div>
         <h3>Assess</h3>
-        <p>I go wide. Revenue, systems, data, operations, the handoffs between them. I find where the upside is, including the opportunities nobody flagged because the day-to-day got in the way.</p>
+        <p>I go wide: revenue, systems, data, operations, and the handoffs between them. The upside surfaces, including what the day-to-day buried.</p>
       </div>
       <div class="phase">
         <div class="k">weeks 3–10</div>
         <h3>Build</h3>
-        <p>Then I fix it. CRM architecture, revenue reporting, the internal tools and integrations that turn spreadsheets and memory into a system. Built, not recommended.</p>
+        <p>CRM architecture, reporting, internal tools, integrations. Built, not recommended.</p>
       </div>
       <div class="phase">
         <div class="k">weeks 10–12</div>
         <h3>Hand off</h3>
-        <p>I leave it running without me. Documentation, training, and a clear map of what got fixed, what's next, and where a specialist is genuinely worth the spend.</p>
+        <p>It runs without me. Documentation, training, and a map of what's next.</p>
       </div>
     </div>
 
     <div class="honest" style="margin-top:26px; background:rgba(248,246,241,.04); border-color:rgba(248,246,241,.14)">
-      <div class="q" style="color:var(--cream)">I tell you what I can build myself, and where a contractor is actually worth it. No padding the scope to keep myself busy.</div>
-      <p style="color:rgba(248,246,241,.7)">Every assessment ends with a straight call: here's what I'll deliver inside this engagement, here's what's worth extending for, and here's the short list where outside help earns its cost. You decide. I'm not incentivized to make the problem bigger than it is.</p>
+      <div class="q" style="color:var(--cream)">I tell you what I'll build, and where a specialist is worth it. No padded scope.</div>
+      <p style="color:rgba(248,246,241,.7)">Every assessment ends the same way: what I'll deliver in scope, what's worth extending for, and where outside help earns its cost. You decide.</p>
+    </div>
+    <div class="mailband" style="margin-top:26px">
+      <div class="mb-copy">
+        <div class="mb-k">or write instead</div>
+        <p>Share your challenges or ambitions. I'll tell you honestly if I can help.</p>
+      </div>
+      <a class="btn btn-solid" style="background:var(--teal)" href="mailto:hello@katiehaywardconsulting.com?subject=Challenges%20%2B%20ambitions">email katie</a>
     </div>
   </div>
 </section>
@@ -447,13 +477,13 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
     <div class="sec-head">
       <div class="eyebrow">what i actually do</div>
       <h2>The operational middle, <em>where things get stuck</em>.</h2>
-      <p>The work that's too strategic for a contractor and too in-the-weeds for a consultant. That gap is where I live.</p>
+      <p>Too strategic for a contractor, too hands-on for a consultant. That's the gap I fill.</p>
     </div>
     <div class="caps">
-      <div class="cap"><div class="k">01</div><h3>RevOps from zero</h3><p>Pipeline, forecasting, the reporting layer a board actually trusts. Built a full revenue function from nothing through a live public listing.</p></div>
-      <div class="cap"><div class="k">02</div><h3>CRM &amp; systems architecture</h3><p>Normalized data across custom objects, downstream integrations, the connective tissue between tools that don't talk to each other. Three times, from scratch.</p></div>
-      <div class="cap"><div class="k">03</div><h3>Post-acquisition integration</h3><p>Six M&amp;A transactions end to end across the US, Canada, and the UK. Brand, IT, and systems folded into one operating whole.</p></div>
-      <div class="cap"><div class="k">04</div><h3>Applied AI, built in</h3><p>I ship working software with AI as the accelerant. Bid models, proposal engines, calculators, live in real operations. Not slideware about AI. The thing itself.</p></div>
+      <div class="cap"><div class="k">01</div><h3>RevOps from zero</h3><p>Pipeline, forecasting, board-grade reporting. Built from zero through a live public listing.</p></div>
+      <div class="cap"><div class="k">02</div><h3>CRM &amp; systems architecture</h3><p>Normalized data, downstream integrations, systems that finally talk. Three builds from scratch.</p></div>
+      <div class="cap"><div class="k">03</div><h3>Post-acquisition integration</h3><p>Six transactions end to end across the US, Canada, and the UK. Brand, IT, and systems, unified.</p></div>
+      <div class="cap"><div class="k">04</div><h3>Applied AI, built in</h3><p>Working software, shipped: bid models, proposal engines, calculators, live in operations. Not slideware.</p></div>
     </div>
   </div>
 </section>
@@ -465,7 +495,7 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
     <div class="honest nk">
       <div class="nk-copy">
         <div class="q">A new kind of hire. Years of cross-functional range, technical and AI skills, and a relentless work ethic, in one seat.</div>
-        <p>The consultant-versus-doer split made sense when strategy and execution required different people. AI collapsed that. I use it to do a bigger lift for one client, not to spread myself across five. Fully dedicated, deeply in your business, shipping working systems at a pace that used to take a team.</p>
+        <p>Strategy and execution used to require different people. AI collapsed that. I use it to do more for one client, not to take on five. One business at a time, at a pace that used to take a team.</p>
       </div>
       <div class="nk-photo">
         <div class="nk-blob"></div>
@@ -481,38 +511,38 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
     <div class="sec-head">
       <div class="eyebrow">what it costs</div>
       <h2>One line item <em>instead of two</em>.</h2>
-      <p>Priced so a company gets a senior operator who both diagnoses and delivers, for less than the traditional assess-then-build sequence costs on its own.</p>
+      <p>One senior operator who diagnoses and delivers, for less than the two-vendor path.</p>
     </div>
     <div class="price-grid">
       <div class="price-card">
         <div class="glow"></div>
         <div class="eyebrow">dedicated engagements start at</div>
         <div class="amt">$25K<small> / month</small></div>
-        <div class="sub">90-day minimum. Fully dedicated and embedded, not a few advisory hours a week. One client at a time. Defined scope, defined end, self-sustaining at handoff.</div>
+        <div class="sub">90-day minimum. Fully dedicated, one client at a time. Self-sustaining at handoff.</div>
         <ul>
-          <li>Consulting and execution in one seat: I advise it, then I build it</li>
-          <li>AI multiplies what I ship for you, not how many clients I take</li>
-          <li>Straight guidance on what I build vs. where a specialist pays off</li>
-          <li>Remote, with travel where the work needs it</li>
+          <li>Consulting and execution in one seat</li>
+          <li>AI multiplies what I ship, not how many clients I take</li>
+          <li>Straight guidance: my build vs. a specialist's</li>
+          <li>Remote, travel as needed</li>
         </ul>
       </div>
       <div class="compare">
         <div class="eyebrow" style="margin-bottom:10px">for comparison</div>
         <h3>The traditional path, modeled</h3>
-        <div class="csub">What the same outcome typically costs when it's bought as two separate vendors. Market ranges, not my pricing.</div>
+        <div class="csub">The same outcome, bought as two vendors. Market ranges, not my pricing.</div>
         <div class="crow">
           <div class="ctitle"><span>Vendor 1: consultants diagnose</span><span class="cval">$75K&#8211;200K</span></div>
-          <div class="cnote">A diagnostic engagement. Produces a recommendation. A deck.</div>
+          <div class="cnote">Produces a deck.</div>
         </div>
         <div class="crow">
           <div class="ctitle"><span>Vendor 2: contractors implement</span><span class="cval">$20K&#8211;60K+ per project</span></div>
-          <div class="cnote">Integration, migration, and build projects, priced one at a time, over the following quarters.</div>
+          <div class="cnote">Build projects, priced one at a time, over following quarters.</div>
         </div>
         <div class="crow me">
           <div class="ctitle"><span>This engagement: both, one person</span><span class="cval">from $75K / quarter</span></div>
-          <div class="cnote">Assessment and the builds, inside the same quarter. From $75K.</div>
+          <div class="cnote">Both, same quarter. From $75K.</div>
         </div>
-        <div class="foot">Ranges reflect published 2026 mid-market rates for operations consulting and scoped implementation projects. Every engagement here is quoted to the business, not the table.</div>
+        <div class="foot">Published 2026 mid-market ranges. Every engagement is quoted to the business.</div>
       </div>
     </div>
   
@@ -522,13 +552,20 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
       <div>
         <div class="s-sub">start smaller &#183; the diagnostic sprint</div>
         <h3>Five interviews. One roadmap. 72 hours.</h3>
-        <p>I interview up to five of your key leaders and operational people, then hand you a cohesive strategy roadmap within 72 hours of the last conversation. What's working, where the upside is, what to do about it, and in what order. Yours to run with, with me or without me.</p>
+        <p>Up to five interviews with your key people. A cohesive strategy roadmap within 72 hours of the last one. Yours to run with, with me or without me.</p>
         <span class="s-credit">credited in full toward an engagement started within 30 days</span>
       </div>
       <div class="s-price">
         <div class="amt">$12,500</div>
         <div class="flat">flat &#183; half a month, applied forward</div>
       </div>
+    </div>
+    <div class="mailband" style="margin-top:16px">
+      <div class="mb-copy">
+        <div class="mb-k">unsure where to start</div>
+        <p>Not sure which fits? Tell me where you're headed. I'll point you to the right door.</p>
+      </div>
+      <a class="btn btn-ghost" href="mailto:hello@katiehaywardconsulting.com?subject=Challenges%20%2B%20ambitions">email katie</a>
     </div>
   </div>
 </section>
@@ -641,20 +678,20 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
       <div class="fit-col yes">
         <h3>A fit when</h3>
         <ul>
-          <li>The company grew past its systems and nobody owns the gap</li>
-          <li>You just closed and the business runs on spreadsheets and one person's memory</li>
-          <li>You need someone who'll diagnose <em>and</em> build, not hand you a plan</li>
-          <li>The work is real for a quarter or two, not a permanent seat yet</li>
-          <li>You want AI actually built into operations, not a strategy about it</li>
+          <li>The company grew past its systems</li>
+          <li>You just closed, and it all runs on spreadsheets and memory</li>
+          <li>You need diagnosis <em>and</em> build, not a plan</li>
+          <li>The work is a quarter or two, not a permanent seat yet</li>
+          <li>You want AI built in, not a strategy about it</li>
         </ul>
       </div>
       <div class="fit-col no">
         <h3>Not a fit when</h3>
         <ul>
-          <li>You only need the diagnosis and roadmap (that's the Diagnostic Sprint, start there)</li>
-          <li>The job is a single specialized build with a clear spec (hire the specialist)</li>
-          <li>You need staff augmentation by the hour, indefinitely</li>
-          <li>The engagement is under 90 days (that's advice, not a system)</li>
+          <li>You only need the roadmap (that's the Sprint, start there)</li>
+          <li>It's one specialized build with a clear spec (hire the specialist)</li>
+          <li>You need hourly staff augmentation, indefinitely</li>
+          <li>It's under 90 days (that's advice, not a system)</li>
         </ul>
       </div>
     </div>
@@ -666,18 +703,19 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
   <div class="wrap">
     <div class="bulb-wrap"><img class="bulb" src="data:image/jpeg;base64,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" alt="Hayward lightbulb logo" loading="lazy"></div>
     <h2>Let me <em>at 'em</em>.</h2>
-    <p>A new kind of operator. Years of cross-functional range, technical and AI skills, and a relentless work ethic. Point me at the problem.</p>
+    <p>Cross-functional range, technical and AI skill, relentless work ethic. Point me at the problem.</p>
     <div class="herocta">
       <a class="btn btn-solid" href="https://calendar.app.google/iax3eaqp5xNwpsHW8" target="_blank" rel="noopener">book a consultation</a>
       <a class="btn btn-ghost" href="https://tinyurl.com/haywardexecutiveportfolio" target="_blank" rel="noopener">see the full portfolio</a>
     </div>
+    <p class="mailcta">Prefer email? <a href="mailto:hello@katiehaywardconsulting.com?subject=Challenges%20%2B%20ambitions">hello@katiehaywardconsulting.com</a> works just as well.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="wordmark">hayward<b>.</b></div>
-    <div class="fmeta">operator for hire · remote + travel · iowa</div>
+    <div class="fmeta">operator for hire · remote + travel · iowa · <a href="mailto:hello@katiehaywardconsulting.com?subject=Challenges%20%2B%20ambitions" style="color:var(--teal);text-decoration:none">hello@katiehaywardconsulting.com</a></div>
   </div>
   <div class="wrap" style="margin-top:14px">
     <div class="fmeta" style="font-size:11.5px; color:rgba(26,26,46,.45)">© 2026 Hayward Consulting &amp; Creative LLC · all rights reserved</div>
