@@ -51,7 +51,7 @@
         {
           "@type": "Question",
           "name": "What does hayward. do?",
-          "acceptedAnswer": {"@type": "Answer", "text": "One senior operator embeds in your company for a quarter, assesses every corner of the business, identifies the upside, and then builds it: RevOps, CRM and systems architecture, integrations, reporting, and AI-powered internal tools. Consulting and execution in one seat."}
+          "acceptedAnswer": {"@type": "Answer", "text": "One senior operator embeds in your company, assesses every corner of the business, identifies the upside, and then builds it: RevOps, CRM and systems architecture, integrations, reporting, and AI-powered internal tools. Consulting and execution in one seat."}
         },
         {
           "@type": "Question",
@@ -276,6 +276,45 @@ section{padding:82px 0}
 .fit-col.yes li::before{content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:700}
 .fit-col.no li::before{content:"—"; position:absolute; left:0; color:var(--lav)}
 
+
+/* ---------- range pills ---------- */
+#fit{padding-bottom:88px}
+.range-block{margin-top:34px}
+.range-h{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.pill{font-family:'Inter',system-ui,sans-serif;font-size:14px;line-height:1;padding:11px 18px;border-radius:100px;background:#fff;border:1px solid var(--line);color:var(--ink-soft);transition:.2s;cursor:default;white-space:nowrap}
+.pill.hot{background:linear-gradient(135deg,var(--teal),var(--teal-lt));border-color:transparent;color:#fff;font-weight:500;box-shadow:0 4px 14px rgba(77,158,154,.28)}
+.pill.hot:nth-of-type(5n){background:linear-gradient(135deg,var(--lav),var(--pink));box-shadow:0 4px 14px rgba(196,159,212,.32)}
+.pill:hover{transform:translateY(-1px);border-color:var(--teal)}
+.pill.hot:hover{transform:translateY(-1px);border-color:transparent}
+@media(max-width:600px){.pill{font-size:13px;padding:10px 15px}}
+
+
+/* ---------- flow & motion audit ---------- */
+#fit{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:72px 0 80px;position:relative;overflow:hidden}
+#fit .wrap,.pricing .wrap{position:relative;z-index:1}
+.pricing{position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(26px);pointer-events:none;z-index:0;animation:drift 20s ease-in-out infinite}
+.orb-a{width:420px;height:420px;right:-140px;top:-120px;opacity:.35;background:radial-gradient(circle at 40% 40%,var(--teal-lt) 0%,transparent 60%),radial-gradient(circle at 70% 70%,var(--pink) 0%,transparent 55%)}
+.orb-b{width:380px;height:380px;left:-130px;bottom:-110px;opacity:.3;background:radial-gradient(circle at 45% 45%,var(--lav) 0%,transparent 58%),radial-gradient(circle at 65% 30%,var(--teal-lt) 0%,transparent 55%);animation-delay:-8s}
+html.js .wr h2 .wrd{display:inline-block;opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+html.js .wr.in h2 .wrd{opacity:1;transform:none}
+html.js .wr p,html.js .wr .eyebrow{opacity:0;transform:translateY(12px);transition:opacity .6s ease .1s,transform .6s cubic-bezier(.2,.7,.2,1) .1s}
+html.js .wr.in p,html.js .wr.in .eyebrow{opacity:1;transform:none}
+html.js .range-block .pill{opacity:0;transform:translateY(10px) scale(.97);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+html.js .range-block.in .pill{opacity:1;transform:none}
+@media(max-width:760px){
+  .sec-head{margin-bottom:28px}
+  #fit{padding:54px 0 60px}
+  .range-block{margin-top:26px}
+  .orb-a{width:280px;height:280px;right:-120px}
+  .orb-b{width:260px;height:260px;left:-110px}
+}
+@media(prefers-reduced-motion:reduce){
+  .orb{animation:none}
+  html.js .wr h2 .wrd,html.js .wr p,html.js .wr .eyebrow,html.js .range-block .pill{opacity:1;transform:none;transition:none}
+}
+
 /* ---------- CTA ---------- */
 .final{text-align:center; padding:100px 0}
 .final h2{font-family:'Fraunces',serif; font-weight:400; font-size:clamp(30px,5vw,52px); line-height:1.06; letter-spacing:-.02em; max-width:20ch; margin:0 auto}
@@ -434,7 +473,7 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
   <div class="wrap">
     <div class="eyebrow">a new kind of hire &#183; analyst &#183; builder &#183; doer</div>
     <h1>what your business <em>could be doing</em>. <span class="b">found, then built.</span></h1>
-    <p class="lede">One quarter, embedded. I assess the business, find the upside, and build it. One person, diagnosis through delivery.</p>
+    <p class="lede">Embedded and fully dedicated. I assess the business, find the upside, and build it. One person, diagnosis through delivery.</p>
     <div class="herocta">
       <a class="btn btn-solid" href="https://calendar.app.google/iax3eaqp5xNwpsHW8" target="_blank" rel="noopener">book a consultation</a>
       <a class="btn btn-ghost" href="#how">how it works</a>
@@ -455,23 +494,22 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
 <section class="offer" id="how">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">the engagement</div>
-      <h2>A quarter in your business, <em>doing the work</em>.</h2>
-      <p>Assessment and execution, one engagement. Defined scope, real end date.</p>
+      <div class="eyebrow">how it works</div>
+      <h2>Assess and execute. <em>One engagement.</em></h2>
     </div>
     <div class="phases">
       <div class="phase">
-        <div class="k">weeks 1–3</div>
+        <div class="k">phase 01</div>
         <h3>Assess</h3>
         <p>I go wide: revenue, systems, data, operations, and the handoffs between them. The upside surfaces, including what the day-to-day buried.</p>
       </div>
       <div class="phase">
-        <div class="k">weeks 3–10</div>
+        <div class="k">phase 02</div>
         <h3>Build</h3>
         <p>CRM architecture, reporting, internal tools, integrations. Built, not recommended.</p>
       </div>
       <div class="phase">
-        <div class="k">weeks 10–12</div>
+        <div class="k">phase 03</div>
         <h3>Hand off</h3>
         <p>It runs without me. Documentation, training, and a map of what's next.</p>
       </div>
@@ -491,26 +529,8 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
   </div>
 </section>
 
-<!-- CAPABILITIES -->
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">what i actually do</div>
-      <h2>The operational middle, <em>where things get stuck</em>.</h2>
-      <p>Too strategic for a contractor, too hands-on for a consultant. That's the gap I fill.</p>
-    </div>
-    <div class="caps">
-      <div class="cap"><div class="k">01</div><h3>RevOps from zero</h3><p>Pipeline, forecasting, board-grade reporting. Built from zero through a live public listing.</p></div>
-      <div class="cap"><div class="k">02</div><h3>CRM &amp; systems architecture</h3><p>Normalized data, downstream integrations, systems that finally talk. Three builds from scratch.</p></div>
-      <div class="cap"><div class="k">03</div><h3>Post-acquisition integration</h3><p>Six transactions end to end across the US, Canada, and the UK. Brand, IT, and systems, unified.</p></div>
-      <div class="cap"><div class="k">04</div><h3>Applied AI, built in</h3><p>Working software, shipped: bid models, proposal engines, calculators, live in operations. Not slideware.</p></div>
-    </div>
-  </div>
-</section>
-
-
 <!-- NEW KIND OF HIRE -->
-<section style="padding-top:0">
+<section style="padding:76px 0">
   <div class="wrap">
     <div class="honest nk">
       <div class="nk-copy">
@@ -525,13 +545,107 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
   </div>
 </section>
 
+
+<!-- FIT -->
+<section id="fit">
+  <div class="orb orb-a"></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">honest fit</div>
+      <h2>The <em>range</em>.</h2>
+      <p>Not one lane. What I've actually done, and what a good engagement can cover.</p>
+    </div>
+
+    <div class="range-block">
+      <h3 class="range-h">Operating &amp; strategy</h3>
+      <div class="pills">
+        <span class="pill hot">Chief of Staff</span>
+        <span class="pill hot">Board reporting</span>
+        <span class="pill">Executive operating cadence</span>
+        <span class="pill">Strategic planning</span>
+        <span class="pill">All-hands &amp; investor comms</span>
+        <span class="pill">Change management</span>
+        <span class="pill hot">Solving for [insert your problem]</span>
+      </div>
+    </div>
+
+    <div class="range-block">
+      <h3 class="range-h">Revenue operations</h3>
+      <div class="pills">
+        <span class="pill hot">HubSpot architecture</span>
+        <span class="pill hot">CRM from zero</span>
+        <span class="pill">Pipeline &amp; forecasting</span>
+        <span class="pill">Marketing automation</span>
+        <span class="pill">Sales enablement</span>
+        <span class="pill">Attribution &amp; reporting</span>
+        <span class="pill">Deal desk &amp; approval flow</span>
+        <span class="pill hot">Connecting CX &amp; sales</span>
+        <span class="pill">Renewals &amp; account management</span>
+      </div>
+    </div>
+
+    <div class="range-block">
+      <h3 class="range-h">Applied AI</h3>
+      <div class="pills">
+        <span class="pill hot">AI for business productivity</span>
+        <span class="pill hot">AI business process improvement</span>
+        <span class="pill">Custom internal tools, coded</span>
+        <span class="pill">AI-powered outbound</span>
+        <span class="pill">Bid, proposal &amp; pitch generation</span>
+        <span class="pill">Financial models</span>
+        <span class="pill">AI adoption across teams</span>
+      </div>
+    </div>
+
+    <div class="range-block">
+      <h3 class="range-h">M&amp;A &amp; corporate development</h3>
+      <div class="pills">
+        <span class="pill hot">M&amp;A process, end to end</span>
+        <span class="pill hot">Post-acquisition integration</span>
+        <span class="pill">Target sourcing &amp; scoring</span>
+        <span class="pill">Board approval decks</span>
+        <span class="pill">Due diligence coordination</span>
+        <span class="pill">Systems consolidation</span>
+        <span class="pill">Brand integration</span>
+        <span class="pill">People &amp; org integration</span>
+      </div>
+    </div>
+
+    <div class="range-block">
+      <h3 class="range-h">Systems &amp; IT</h3>
+      <div class="pills">
+        <span class="pill">Corporate IT direction</span>
+        <span class="pill">Support desk operations</span>
+        <span class="pill">Vendor evaluation</span>
+        <span class="pill">Website &amp; CMS</span>
+      </div>
+    </div>
+
+    <div class="range-block">
+      <h3 class="range-h">Brand, content &amp; growth</h3>
+      <div class="pills">
+        <span class="pill hot">Brand strategy &amp; voice</span>
+        <span class="pill">Full-funnel marketing</span>
+        <span class="pill">Content, email, social</span>
+        <span class="pill">Partnership &amp; affiliate programs</span>
+        <span class="pill">Customer experience programs</span>
+        <span class="pill">Creative direction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 <!-- PRICING -->
 <section class="pricing" id="pricing">
+  <div class="orb orb-b"></div>
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">what it costs</div>
-      <h2>Two ways in. <em>Same operator.</em></h2>
-      <p>Every engagement is scoped to the business. Both are quoted, not negotiated.</p>
+      <h2>Let's <em>get to work</em>.</h2>
+      <p>Every engagement is scoped to the business.</p>
     </div>
 
     <div class="price-simple">
@@ -658,37 +772,6 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
   </div>
 </div>
 
-<!-- FIT -->
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">honest fit</div>
-      <h2>Right for some jobs. <em>Wrong for others.</em></h2>
-    </div>
-    <div class="fit-grid">
-      <div class="fit-col yes">
-        <h3>A fit when</h3>
-        <ul>
-          <li>The company grew past its systems</li>
-          <li>You just closed, and it all runs on spreadsheets and memory</li>
-          <li>You need diagnosis <em>and</em> build, not a plan</li>
-          <li>The work is a quarter or two, not a permanent seat yet</li>
-          <li>You want AI built in, not a strategy about it</li>
-        </ul>
-      </div>
-      <div class="fit-col no">
-        <h3>Not a fit when</h3>
-        <ul>
-          <li>You only need the roadmap (that's the Sprint, start there)</li>
-          <li>It's one specialized build with a clear spec (hire the specialist)</li>
-          <li>You need hourly staff augmentation, indefinitely</li>
-          <li>It's under 90 days (that's advice, not a system)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FINAL CTA -->
 <section class="final" id="start">
   <div class="wrap">
@@ -717,18 +800,41 @@ html.js .rv.d1{transition-delay:.08s} html.js .rv.d2{transition-delay:.16s} html
 <script>
 document.documentElement.classList.add('js');
 (function(){
-  var sel='.stat,.phase,.cap,.honest,.price-card,.compare,.sprint,.qcard,.fit-col,.tool,.tl-item,.sec-head';
+  var sel='.stat,.phase,.honest,.ps-card,.qcard,.tool,.tl-item,.range-block,.mailband';
   var els=document.querySelectorAll(sel), i=0;
   els.forEach(function(el){ el.classList.add('rv'); });
-  document.querySelectorAll('.phases .phase,.caps .cap,.qgrid .qcard,.tools .tool').forEach(function(el){
+  document.querySelectorAll('.phases .phase,.qgrid .qcard,.tools .tool,.price-simple .ps-card').forEach(function(el){
     var sibs=el.parentElement.children, idx=Array.prototype.indexOf.call(sibs,el);
     if(idx===1)el.classList.add('d1'); if(idx===2)el.classList.add('d2'); if(idx===3)el.classList.add('d3');
   });
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  document.querySelectorAll('.sec-head').forEach(function(sh){
+    sh.classList.add('wr');
+    var h=sh.querySelector('h2');
+    if(h){
+      var frag=document.createDocumentFragment();
+      Array.prototype.slice.call(h.childNodes).forEach(function(n){
+        if(n.nodeType===3){
+          n.textContent.split(/(\s+)/).forEach(function(w){
+            if(/^\s+$/.test(w)){frag.appendChild(document.createTextNode(w));}
+            else if(w){var sp=document.createElement('span');sp.className='wrd';sp.textContent=w;frag.appendChild(sp);}
+          });
+        } else { n.classList&&n.classList.add('wrd'); frag.appendChild(n); }
+      });
+      h.innerHTML=''; h.appendChild(frag);
+      h.querySelectorAll('.wrd').forEach(function(w,i){w.style.transitionDelay=(i*55)+'ms';});
+    }
+  });
+  document.querySelectorAll('.pills').forEach(function(g){
+    Array.prototype.slice.call(g.children).forEach(function(p,i){
+      p.style.transitionDelay=Math.min(i*45,420)+'ms';
+    });
+  });
+  var wrEls=document.querySelectorAll('.wr');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});wrEls.forEach(function(e){e.classList.add('in')});return;}
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(function(el){ io.observe(el); });
+  els.forEach(function(el){ io.observe(el); }); wrEls.forEach(function(el){ io.observe(el); });
   var bulb=document.querySelector('.bulb');
   if(bulb){
     var bo=new IntersectionObserver(function(entries){
